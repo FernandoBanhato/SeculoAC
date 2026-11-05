@@ -39,8 +39,8 @@ public class mov : MonoBehaviour
     // ATUALIZA AS ANIMAÇÕES
     void UpdateAnimator()
     {
-        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
         animator.SetBool("IsGrounded", isGrounded);
+        animator.SetFloat("Velocidade", Mathf.Abs(rb.velocity.x));
     }
 
     // MOVIMENTAÇÃO
@@ -66,6 +66,7 @@ public class mov : MonoBehaviour
     // PULO
     void Jump()
     {
+
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.velocity = new Vector2(
@@ -75,7 +76,7 @@ public class mov : MonoBehaviour
 
             isGrounded = false;
 
-            animator.SetTrigger("Jump");
+            //animator.SetTrigger("Jump");
         }
     }
 
